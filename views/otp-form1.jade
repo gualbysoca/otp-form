@@ -1,0 +1,10 @@
+extends ./layout.jade
+
+block contenido
+    h1 Hola mundo cón layout...
+    form(action="/otp-form2", method="POST")
+        div(class="form-group")
+            label(for="msisdn") Número Tigo a validar
+            input(type="text", name="msisdn", placeholder="Ingresa tu número Tigo", id="msisdn", class="form-control" required)
+        div
+            input(type="submit", value="Enviar" class="btn btn-info")

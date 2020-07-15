@@ -1,0 +1,58 @@
+extends ./layout2.jade
+
+block contenido
+    mwc-top-app-bar-fixed
+        div(slot="title") Web OTP Demo
+        mwc-icon-button(id="install" class="invisible" icon="add_to_home_screen" slot="actionItems")
+        mwc-linear-progress(id="progress")
+    
+    main(class="content")
+        form(id="phone-form" class="visible mdc-form-field" action="/send" method="POST")
+            h2 Send following SMS message to this phone from another one after pressing "Verify".
+            pre(id="message")
+
+            div
+                mwc-button(id="copy") Copy
+                mwc-button(id="verify" raised) Verify
+            
+            div
+                p(id="unsupported" class="invisible") Your browser does not support Web OTP API. To try out the API, use Google Chrome 82 or later and enable chrome://flags/#enable-experimental-web-platform-features.
+            
+        
+        form(id="otp-form" class="mdc-form-field" action="/resend" method="POST")
+            h2 Verify your phone number
+            p Enter the 6-digit we sent to 
+            span(id="phone-number")
+                    
+            div(id="otp-field" class="mdc-text-field")
+                input(type="number" is="one-time-code" id="otp-input" class="mdc-text-field__input" autocomplete="one-time-code" pattern="^([0-9]+)$" required)
+                div(class="mdc-notched-outline")
+                    div(class="mdc-notched-outline__leading")
+                    div(class="mdc-notched-outline__notch")
+                        label(for="otp-input" class="mdc-floating-label") 6-digit code
+                    div(class="mdc-notched-outline__trailing")
+        
+            div
+                mwc-button(id="cancel") Cancel
+                mwc-button(id="continue" raised) Continue
+
+    
+        form(id="success" class="mdc-form-field")
+            h2 You are successfully signed in!
+            mwc-button(id="back") Start over
+
+    
+    mwc-snackbar(id="snackbar")
+    script(src="/public/otp-frontend.js")
+
+    
+
+
+
+
+
+    
+
+ 
+
+

@@ -1,0 +1,17 @@
+{
+  "name": "otp_tm",
+  "version": "1.0.0",
+  "description": "OPT de Tigo Money",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mob Army SRL",
+  "license": "ISC",
+  "dependencies": {
+    "@material/textfield": "^7.0.0",
+    "body-parser": "^1.19.0",
+    "jade": "^1.11.0",
+    "xpress": "^2.4.6"
+  }
+}
